@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon/favicon-map.ico" type="image/x-icon">
+  <!--select выбор материалов-->
+  <link rel="stylesheet" href="css/choices.min.css">
+  <!--Скроллбар-->
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>База знаний</title>
+</head>
+
+<body>
+  <main class="main">
+    <section class="base">
+      <div class="container base__container">
+
+        <!--Чекбокс-->
+        <div class="checkboxes margin--right">
+          <h3 class="base__title">Категории:</h3>
+          <div class="base__label--column">
+            <div class="base__label--font">
+              <label>
+                <input type="checkbox" name="check" class="check">
+                Динозавры
+                <span></span>
+              </label>
+            </div>
+            <div class="base__label--font">
+              <label>
+                <input type="checkbox" name="check" class="check">
+                Медведи
+                <span></span>
+              </label>
+            </div>
+            <div class="base__label--font">
+              <label>
+                <input type="checkbox" name="check" class="check">
+                Косули
+                <span></span>
+              </label>
+            </div>
+            <div class="base__label--font">
+              <label>
+                <input type="checkbox" name="check" class="check">
+                Лисы
+                <span></span>
+              </label>
+            </div>
+            <div class="base__label--font">
+              <label>
+                <input type="checkbox" name="check" class="check">
+                Волки
+                <span></span>
+              </label>
+            </div>
+            <div class="base__label--font">
+              <label>
+                <input type="checkbox" name="check" class="check">
+                Олени и лоси
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </div><!--checkboxes-->
+
+        <!--Селект-->
+        <div class="base__select margin--right">
+          <select class="my-select" name="select" id="selectCustom">
+            <option value="">Материал</option>
+            <option value="">Древесина</option>
+            <option value="">Металл</option>
+            <option value="">Камень</option>
+            <option value="">Пластик</option>
+            <option value="">Композитный</option>
+            <option value="">Гипс</option>
+          </select>
+        </div>
+        <div class="base__select margin--right">
+          <select name="select" class="my-select">
+            <option value="">Материал</option>
+            <option value="">Древесина</option>
+            <option value="">Металл</option>
+            <option value="">Камень</option>
+            <option value="">Пластик</option>
+            <option value="">Композитный</option>
+            <option value="">Гипс</option>
+          </select>
+        </div>
+
+        <!--Яндекс карта map-->
+        <div class="margin--right">
+          <div id="map"></div>
+        </div>
+
+        <!--Скроллбар-->
+        <div class="customScroll margin--right" data-simplebar>
+          <p class="base__desrc">Сложно сказать, почему многие известные личности представлены в&nbsp;исключительно
+            положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены
+            соответствующими инстанциями. Мы&nbsp;вынуждены отталкиваться
+            от&nbsp;того, что высокотехнологичная концепция общественного уклада представляет собой интересный
+            эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно
+            следующее: непосредственные участники
+            технического прогресса освещают чрезвычайно интересные особенности картины в&nbsp;целом, однако конкретные
+            выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое
+            развитие, а&nbsp;также
+            свежий взгляд на&nbsp;привычные вещи&nbsp;&mdash; безусловно открывает новые горизонты для первоочередных
+            требований.
+          </p>
+        </div>
+
+
+        <!--Телефон-->
+        <div class="base__form margin--right">
+          <form action="https://jsonplacexolder.typicode.com/post" method="POST" class="form">
+            <div class="base__form-input">
+            <!--data здесь он обрабатывает плагин валидатор кода-->
+              <input class="base__input" type="text" name="Имя" placeholder="Имя*" data-validate-field="name">
+            </div>
+            <div class="base__form-input">
+              <input class="base__input" type="tel" name="tel" placeholder="Телефон*" data-validate-field="tel"
+              data-validate-rules="phone">
+            </div>
+
+            <div class="base__form-input">
+              <input class="base__input" type="email" name="email" placeholder="E-mail*" data-validate-field="mail">
+            </div>
+            <button class="base__button" type="submit">Заказать</button>
+          </form>
+        </div>
+
+
+        <!--Тултип-->
+        <div class="base__block__tooltip">
+          <p class="tooltip__desrc">Следует отметить, что
+            <br>социально-экономическое развитие способствует повышению качества переосмысления внешнеэкономических политик.
+            <span class="tooltip">
+              <span class="marker" tabindex="0" title="">i</span>
+              <span role="tooltip" id="notifications-label" class="tooltip__content">Глава 2, страница 176</span>
+            </span>
+          </p>
+        </div>
+      </div>
+      <!--Конец base__container-->
+    </section>
+  </main>
+
+
+
+  <!--//Яндекс карта map//-->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+  <!--Валидатор input-ов-->
+  <script src="js/just-validate.js"></script>
+  <!--Маска формы input-ов-->
+  <script src="js/inputmask.min.js"></script>
+  <!--Скроллбар-->
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <!--select выбор материалов-->
+  <script src="js/choices.min.js"></script>
+  <!--Мой-->
+  <script src="js/mark.js"></script>
+</body>
+
+</html>
